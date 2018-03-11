@@ -2,9 +2,10 @@
   "name": "ts-onchange-decorator",
   "version": "1.0.0",
   "description": "A property and accessor decorator to call a function on new values",
-  "main": "dist/on-change-decorator.js",
+  "main": "./dist/on-change-decorator.js",
+  "types": "./dist/on-change-decorator.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
   },
   "keywords": [
     "typescript",
@@ -15,9 +16,12 @@
   "author": "Christoph Hoffmann",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
     "chai": "^4.1.2",
     "mocha": "^5.0.4",
     "ts-lint": "^4.5.1",
+    "ts-node": "^5.0.1",
     "typescript": "^2.7.2"
   }
 }

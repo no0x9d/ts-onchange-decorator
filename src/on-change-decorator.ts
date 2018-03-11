@@ -1,5 +1,4 @@
-export function onChange(changeHandler?: Function | string,
-  backingField?: string): PropertyDecorator | MethodDecorator {
+export function OnChange(changeHandler?: Function | string, backingField?: string): any {
 
   return function onChangeDecorator(target: Object, key: string,
     descriptor: PropertyDescriptor): PropertyDescriptor | undefined {
