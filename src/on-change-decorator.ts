@@ -20,13 +20,13 @@ function handlePropertyDescriptor(changeHandler: Function | string | undefined, 
   const originalSetter = descriptor.set;
 
   descriptor.set = function(value: any) {
-    originalSetter && originalSetter.call(this, value);
     const oldValue = descriptor.get ? descriptor.get.call(this) : null;
+    originalSetter && originalSetter.call(this, value);
 
     if (onChangeHandler === undefined) {
       onChangeHandler = resolveChangeHandler(this, changeHandler, key);
     }
-    onChangeHandler && onChangeHandler.call(this, oldValue, value);
+    onChangeHandler && onChangeHandler.call(this, value, oldValue);
   };
   return descriptor;
 }
@@ -51,7 +51,7 @@ function handleAccessorDecorator(changeHandler: Function | string | undefined,
     if (onChangeHandler === undefined) {
       onChangeHandler = resolveChangeHandler(this, changeHandler, key);
     }
-    onChangeHandler && onChangeHandler.call(this, oldValue, value);
+    onChangeHandler && onChangeHandler.call(this, value, oldValue);
   };
 
   // Create new property with getter and setter

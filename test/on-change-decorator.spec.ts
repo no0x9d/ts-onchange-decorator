@@ -6,7 +6,7 @@ describe('onChange decorator', () => {
     it('should call change handler if function is supplied', () => {
 
       let called = false;
-      const changeHandler = (oldValue: string, newValue: string) => {
+      const changeHandler = (newValue: string, oldValue: string) => {
         expect(oldValue).to.be.equal(undefined);
         expect(newValue).to.be.equal('foo');
         called = true;
@@ -30,7 +30,7 @@ describe('onChange decorator', () => {
         @OnChange('handler')
         field: string;
 
-        handler(oldValue: string, newValue: string) {
+        handler(newValue: string, oldValue: string) {
           expect(oldValue).to.be.equal(undefined);
           expect(newValue).to.be.equal('foo');
           called = true;
@@ -50,7 +50,7 @@ describe('onChange decorator', () => {
         @OnChange()
         field: string;
 
-        fieldChange(oldValue: string, newValue: string) {
+        fieldChange(newValue: string, oldValue: string) {
           expect(oldValue).to.be.equal(undefined);
           expect(newValue).to.be.equal('foo');
           called = true;
@@ -88,7 +88,7 @@ describe('onChange decorator', () => {
     it('should call change handler if function is supplied', () => {
 
       let called = false;
-      const changeHandler = (oldValue: string, newValue: string) => {
+      const changeHandler = (newValue: string, oldValue: string) => {
         expect(oldValue).to.be.equal(null);
         expect(newValue).to.be.equal('foo');
         called = true;
@@ -113,7 +113,7 @@ describe('onChange decorator', () => {
         set field(value: string) {
         }
 
-        handler(oldValue: string, newValue: string) {
+        handler(newValue: string, oldValue: string) {
           expect(oldValue).to.be.equal(null);
           expect(newValue).to.be.equal('foo');
           called = true;
@@ -133,7 +133,7 @@ describe('onChange decorator', () => {
         set field(value: string) {
         }
 
-        fieldChange(oldValue: string, newValue: string) {
+        fieldChange(newValue: string, oldValue: string) {
           expect(oldValue).to.be.equal(null);
           expect(newValue).to.be.equal('foo');
           called = true;
