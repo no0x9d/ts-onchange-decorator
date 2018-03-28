@@ -13,7 +13,10 @@
     "decorator",
     "onchange"
   ],
-  "author": "Christoph Hoffmann",
+  "author": {
+    "name": "Christoph Hoffmann",
+    "email": "me@nestedloop.de"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.2",
@@ -23,5 +26,13 @@
     "ts-lint": "^4.5.1",
     "ts-node": "^5.0.1",
     "typescript": "^2.7.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/no0x9d/ts-onchange-decorator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/no0x9d/ts-onchange-decorator/issues"
+  },
+  "homepage": "https://github.com/no0x9d/ts-onchange-decorator"
 }
