@@ -4,3 +4,4 @@
 src/
 test/
 node_modules/
+ts-onchange-decorator-*.tgz
