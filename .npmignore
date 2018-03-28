@@ -3,5 +3,7 @@
 
 src/
 test/
+tsconfig.json
+tslint.json
 node_modules/
 ts-onchange-decorator-*.tgz
